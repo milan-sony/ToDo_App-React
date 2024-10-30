@@ -1,0 +1,41 @@
+.head-text{
+    color: #0D92F4;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 6px;
+}
+.day{
+    color: gray;
+    text-transform: uppercase;
+    font-family: "Roboto", serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+.todo-input{
+    background-color: whitesmoke;
+    border: none;
+    color: gray;
+    font-family: "Roboto", serif;
+}
+.todo-input::placeholder{
+    color: gray;
+    font-family: "Roboto", serif;
+}
+.todo-input:focus{
+    background-color: whitesmoke;
+    outline: none !important;
+    box-shadow: none;
+    color: #0D92F4;
+    font-family: "Roboto", serif;
+    font-weight: 500;
+}
+
+.add-btn{
+    background-color: #0D92F4;
+    color: white;
+    font-family: "Roboto", serif;
+    font-size: 16px;
+    font-weight: 700;
+}
