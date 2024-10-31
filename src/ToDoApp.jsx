@@ -18,11 +18,20 @@ function ToDoApp() {
                             </div>
 
                             {/* list item */}
-                            <div className="input-group mb-3">
-                                <div className="input-group-text">
-                                    <input className="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" />
-                                </div>
-                                <input type="text" className="form-control list-item" aria-label="Text input with checkbox" value={"hello"} readOnly/>
+                            <div className='todos'>
+                                <span className='todo-check-icon'><i class="bi bi-check-circle-fill"></i></span>
+                                <span className='todo'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, qui.</span>
+                                <span className='todo-trash-icon'><i className="bi bi-trash3-fill"></i></span>
+                            </div>
+                            <div className='todos'>
+                                <span className='todo-check-icon'><i class="bi bi-check-circle-fill"></i></span>
+                                <span className='todo'>Lorem ipsum</span>
+                                <span className='todo-trash-icon'><i className="bi bi-trash3-fill"></i></span>
+                            </div>
+                            <div className='todos'>
+                                <span className='todo-check-icon'><i class="bi bi-check-circle-fill"></i></span>
+                                <span className='todo'>Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quos accusantium, repudiandae impedit sunt provident dignissimos veniam quidem cumque vero enim, voluptates quia molestias ut quas corrupti numquam quasi ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi similique vitae veniam cumque sit aliquam, beatae ducimus placeat corporis! Architecto labore eos, in nemo dolor unde veniam cupiditate inventore ad? lore</span>
+                                <span className='todo-trash-icon'><i className="bi bi-trash3-fill"></i></span>
                             </div>
 
                         </div>
