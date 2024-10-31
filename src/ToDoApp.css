@@ -83,10 +83,10 @@ input[type="checkbox"]:focus{
 }
 .todo-check-icon{
     font-size: 22px;
-    color: green;
+    color: #0D92F4;
 }
 .todo-check-icon:hover{
-    color: #0D92F4;
+    color: green;
 }
 .todo-trash-icon{
     font-size: 20px;
