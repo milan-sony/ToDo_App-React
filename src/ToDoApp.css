@@ -73,6 +73,13 @@
     font-weight: 500;
     font-family: "Roboto", serif;
 }
+.todo-strike{
+    color: gray;
+    text-decoration: line-through;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Roboto", serif;
+}
 
 input[type="checkbox"]{
     width: 20px;
@@ -86,6 +93,10 @@ input[type="checkbox"]:focus{
     color: #0D92F4;
 }
 .todo-check-icon:hover{
+    color: green;
+}
+.todo-check-icon-change{
+    font-size: 22px;
     color: green;
 }
 .todo-trash-icon{

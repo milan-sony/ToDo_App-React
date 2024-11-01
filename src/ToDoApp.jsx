@@ -33,7 +33,7 @@ function ToDoApp() {
                             </div>
 
                             {
-                                console.log("todo", todo)
+                                console.log("todo: ", todo)
                             }
                             {
                                 console.log("todo list", todos)
@@ -44,49 +44,24 @@ function ToDoApp() {
                                     return (
                                         <div className='todos' key={index}>
                                             <span onClick={() => {
-                                                console.log("Object1: ", obj)
+                                                console.log("Default Obj1: ", obj)
                                                 // filter will gives you a new filtered array
                                                 setTodos(todos.filter(obj2 => {
-                                                    console.log("Object2: ", obj2)
+                                                    console.log("Obj1 before if: ",obj)
+                                                    console.log("Obj2 before if: ", obj2)
                                                     if (obj2.id === obj.id) {
-                                                        obj2.status = true
+                                                        obj2.status = !obj2.status
+                                                        console.log("Obj1 in if: ", obj)
+                                                        console.log("Obj2 in if: ", obj2)
                                                     } return obj2
                                                 }))
-                                            }} className='todo-check-icon' ><i className="bi bi-check-circle-fill"></i></span>
-                                            <span className='todo'>{obj.todoItem}</span>
+                                            }} className={obj.status ? 'todo-check-icon-change' : 'todo-check-icon'} ><i className="bi bi-check-circle-fill"></i></span>
+                                            <span className={obj.status ? 'todo-strike' : 'todo'}>{obj.todoItem}</span>
                                             <span className='todo-trash-icon'><i className="bi bi-trash3-fill"></i></span>
                                         </div>
                                     )
                                 })
                             }
-
-                            <h1>New List</h1>
-
-                            {
-                                todos.map((obj, index) => {
-                                    console.log("New Object: ",obj)
-                                    if (obj.status) {
-                                        return (
-                                            <div className='todos' key={index}>
-                                                <span onClick={() => {
-                                                    console.log("Object1: ", obj)
-                                                    // filter will gives you a new filtered array
-                                                    setTodos(todos.filter(obj2 => {
-                                                        console.log("Object2: ", obj2)
-                                                        if (obj2.id === obj.id) {
-                                                            obj2.status = true
-                                                        } return obj2
-                                                    }))
-                                                }} className='todo-check-icon'><i className="bi bi-check-circle-fill"></i></span>
-                                                <span className='todo'>{obj.todoItem}</span>
-                                                <span className='todo-trash-icon'><i className="bi bi-trash3-fill"></i></span>
-                                            </div>
-                                        )
-                                        return null
-                                    }
-                                })
-                            }
-
                         </div>
                     </div>
                 </div>
