@@ -4,11 +4,16 @@ import './ToDoApp.css'
 function ToDoApp() {
 
     const [todo, setTodo] = useState('')
-    const [todos, setTodos] = useState([ ])
+    const [todos, setTodos] = useState([])
 
     // function to add todo to the todo list
-    const addTodo = () =>{
-        setTodos([...todos, todo])
+    const addTodo = () => {
+        setTodos([...todos, { // array of objects
+            'id': Date.now(),  // used to uniquely identify each todo items
+            'todoItem': todo,
+            'status': false
+        }])
+
         setTodo('')
     }
 
@@ -27,29 +32,58 @@ function ToDoApp() {
                                 <button className="btn add-btn" type="button" onClick={addTodo}><i className="bi bi-plus-circle-fill"></i>&nbsp;ADD</button>
                             </div>
 
-                            {/* {
+                            {
                                 console.log("todo", todo)
                             }
                             {
                                 console.log("todo list", todos)
-                            } */}
-
-                            {/* list item */}
-                            {/* <div className='todos'>
-                                <span className='todo-check-icon'><i class="bi bi-check-circle-fill"></i></span>
-                                <span className='todo'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, qui.</span>
-                                <span className='todo-trash-icon'><i className="bi bi-trash3-fill"></i></span>
-                            </div> */}
+                            }
 
                             {
-                                todos.map((value, index) => {
+                                todos.map((obj, index) => {
                                     return (
                                         <div className='todos' key={index}>
-                                            <span className='todo-check-icon'><i className="bi bi-check-circle-fill"></i></span>
-                                            <span className='todo'>{value}</span>
+                                            <span onClick={() => {
+                                                console.log("Object1: ", obj)
+                                                // filter will gives you a new filtered array
+                                                setTodos(todos.filter(obj2 => {
+                                                    console.log("Object2: ", obj2)
+                                                    if (obj2.id === obj.id) {
+                                                        obj2.status = true
+                                                    } return obj2
+                                                }))
+                                            }} className='todo-check-icon' ><i className="bi bi-check-circle-fill"></i></span>
+                                            <span className='todo'>{obj.todoItem}</span>
                                             <span className='todo-trash-icon'><i className="bi bi-trash3-fill"></i></span>
                                         </div>
                                     )
+                                })
+                            }
+
+                            <h1>New List</h1>
+
+                            {
+                                todos.map((obj, index) => {
+                                    console.log("New Object: ",obj)
+                                    if (obj.status) {
+                                        return (
+                                            <div className='todos' key={index}>
+                                                <span onClick={() => {
+                                                    console.log("Object1: ", obj)
+                                                    // filter will gives you a new filtered array
+                                                    setTodos(todos.filter(obj2 => {
+                                                        console.log("Object2: ", obj2)
+                                                        if (obj2.id === obj.id) {
+                                                            obj2.status = true
+                                                        } return obj2
+                                                    }))
+                                                }} className='todo-check-icon'><i className="bi bi-check-circle-fill"></i></span>
+                                                <span className='todo'>{obj.todoItem}</span>
+                                                <span className='todo-trash-icon'><i className="bi bi-trash3-fill"></i></span>
+                                            </div>
+                                        )
+                                        return null
+                                    }
                                 })
                             }
 

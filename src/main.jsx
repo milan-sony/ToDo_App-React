@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import ToDoApp from "./ToDoApp";
 
 createRoot(document.getElementById("root")).render(
-    <StrictMode>
+    // <StrictMode>
         <ToDoApp />
-    </StrictMode>
+    // </StrictMode>
 );
