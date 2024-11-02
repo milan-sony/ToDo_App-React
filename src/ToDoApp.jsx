@@ -28,8 +28,7 @@ function ToDoApp() {
 
     // Function to delete a todo
     const deleteTodo = (id) => {
-        // setTodos(todos.filter(todo => todo.id !== id));
-        null
+        setTodos(todos.filter(todo => todo.id !== id));
     };
 
     return (
@@ -48,6 +47,13 @@ function ToDoApp() {
                                 placeholder="📝 Add your task"
                                 value={todo}
                                 onChange={(e) => setTodo(e.target.value)}
+                                onFocus={(e) => e.target.placeholder = ""}
+                                onBlur={(e) => e.target.placeholder = "📝 Add your task"}
+                                onKeyDown={(e) => {
+                                    if(e.key === "Enter"){
+                                        addTodo()
+                                    }
+                                }}
                             />
                             <button className="btn add-btn" type="button" onClick={addTodo}>
                                 <i className="bi bi-plus-circle-fill"></i>&nbsp;ADD
